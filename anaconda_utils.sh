@@ -129,6 +129,8 @@ function _load_anaconda()
 
 	local conda_dir="${CONDA_COLLECTION_DIR:-${HOME}/anaconda}"
 
+	test -d "${conda_dir}" || return
+
 	test ${COMP_CWORD} -gt 2 && return
 
 	cur="${COMP_WORDS[COMP_CWORD]}"
